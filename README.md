@@ -14,11 +14,11 @@ The two dimensional pedigree(example: Andrea-Lee-149037twoLen.npy) is the combin
 The script UFC_scrapeS.py scrapes Data From UFC.com and gives you some important stats about the two fighters. The final outputs are .txt files that have been formatted for a quick comparison of the two fighters stats.(They can be foundin the "StaticDataUFC/TXT/" directory) 
 
 # How to Generate Data. 
-It is pretty easy to generate data you simply need to  have to have properly 
+It is pretty easy to generate data, you simply need to  have to have properly 
 formatted inputs and the proper python modules located in requirements.dat. I have put some sample inputs files in the"Input" folder to get you started.
 
 The only pain is that sherdog.com and UFC.com have unique tags 
-for the fighters so you need to find those tags and then generate the input files("NFightersSHER.txt" and "NFightersUFC.txt"). There are some scripts in the "Input" directory that attempt to get these tags for you from a general input file called "Fighters.txt" but you will have to do some manual editing to get the final output. 
+for the fighters so you need to find those tags and generate the input files("NFightersSHER.txt" and "NFightersUFC.txt"). There are some scripts in the "Input" directory that attempt to get these tags for you from a general input file called "Fighters.txt" but you will have to do some manual editing to get the final output. 
 
 Ps. the input files have to be ordered in a way where the people fighting are directly next to eachother(on the next line).  
 
