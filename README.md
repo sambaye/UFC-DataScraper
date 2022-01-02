@@ -15,7 +15,7 @@ The script UFC_scrapeS.py scrapes Data From UFC.com and gives you some important
 
 # How to Generate Data. 
 It is pretty easy to generate data you simply need to  have to have properly 
-formatted inputs and the proper python modules located in requirements.txt. I have put some sample inputs files in the"Input" folder to get you started.
+formatted inputs and the proper python modules located in requirements.dat. I have put some sample inputs files in the"Input" folder to get you started.
 
 The only pain is that sherdog.com and UFC.com have unique tags 
 for the fighters so you need to find those tags and then generate the input files("NFightersSHER.txt" and "NFightersUFC.txt"). There are some scripts in the "Input" directory that attempt to get these tags for you from a general input file called "Fighters.txt" but you will have to do some manual editing to get the final output. 
@@ -25,5 +25,5 @@ Ps. the input files have to be ordered in a way where the people fighting are di
 
 Once you have the proper inputs you should be able to get the data by running the following commands
 
-1. pip install -r requirements.txt
+1. pip install -r requirements.dat
 2. bash Scrape.sh 
