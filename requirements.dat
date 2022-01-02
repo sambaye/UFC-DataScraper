@@ -1,0 +1,9 @@
+beautifulsoup4
+fake-useragent
+numpy
+pandas
+pandas-flavor
+requests
+soupsieve
+urllib3
+lxml
