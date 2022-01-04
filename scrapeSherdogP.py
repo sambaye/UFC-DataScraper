@@ -42,13 +42,14 @@ def makeLists2(raw_data):
             break
     return store
 
+# Opponent List
 def OppLists(OppList):
  Opponents = []
  for i in range(1,len(OppList),8):
   Opponents.append(OppList[i])
  return Opponents
 
-
+# Win Loss information
 def winLoss(OppList):
  win = OppList.count(' W')
  loss = OppList.count(' L')
@@ -130,7 +131,7 @@ def getTags(fighterTag):
 
 
 
-
+# One Dimensional Pedigree 
 def OnePedegree(Fighter):
  time.sleep(5)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -166,7 +167,7 @@ def OnePedegree(Fighter):
  return stats,TagsFinal
  
   
-
+# Two Dimensional Pedigree
 def TwoPedegree(opplist):
  twoD = []
  opplist2D = []
@@ -182,6 +183,7 @@ def TwoPedegree(opplist):
  time.sleep(5)
  return array((twoD)),opplist2D
 
+# Three Dimensional Pedigree
 def ThreePedegree(opplist2D):
  opplistHold = []
  opplist3D = []

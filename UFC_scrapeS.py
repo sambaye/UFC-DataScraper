@@ -123,7 +123,7 @@ def OnePedegree(Fighter):
  Dynamic = Sort(FixTwoD(DynamicInfo))
  return Dynamic
 
-
+# How the fighter lost fights
 def LossType(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -137,7 +137,7 @@ def LossType(Fighter):
  SUB = FixPercent(reverse(LossData[1]))
  return reverse(KO),reverse(DEC),reverse(SUB)
 
-
+# How the fighter won fights
 def WinType2(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -157,7 +157,7 @@ def WinType2(Fighter):
 
 
 
-
+# Accuracy information
 def Accuracy(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -183,6 +183,7 @@ def Accuracy(Fighter):
  return round(100*StrikingAccuracy,2),round(100*TakeDownAccuracy,2),TotalStrikes,TakeDownAttempts,StrikesLanded,TakeDownLanded
  #return round(100*StrikingAccuracy,2)
 
+# Significant strikes per minute
 def SigStrikesPerMinute(Fighter): 
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -198,6 +199,7 @@ def SigStrikesPerMinute(Fighter):
   Val = nan
   return Val
 
+# Significan strikes absorbed per minute
 def SigStrikesAbsorbedPerMinute(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -219,6 +221,7 @@ def SigStrikesAbsorbedPerMinute(Fighter):
  # Val = '11111111'
  #return float(Val[1:5])
 
+# Take down per 15 minutes
 def TakeDownPer15Minute(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -238,6 +241,8 @@ def TakeDownPer15Minute(Fighter):
  #Val= (RateOther1[1])
  #return float(Val[1:5])
 
+
+# Submissions per 15 minute
 def SubmissionPer15Minute(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -256,6 +261,7 @@ def SubmissionPer15Minute(Fighter):
  #Val = (RateOther2[1])
  #return float(Val[1:5])
 
+# Significant strike defense
 def SigStrikeDefense(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -276,7 +282,7 @@ def SigStrikeDefense(Fighter):
  #Val= (RateOther1[2])
  #return float(Val[1:5])
 
-
+# Take down defense
 def TakeDownDefense(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -297,6 +303,7 @@ def TakeDownDefense(Fighter):
  #Val = (RateOther2[2])
  #return float(Val[1:5])
 
+# Knock down ratio
 def KDRatio(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -315,6 +322,8 @@ def KDRatio(Fighter):
  #Val= (RateOther1[3])
  #return float(Val[1:5])
 
+
+# Average Fight time
 def AverageFightTime(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -332,6 +341,7 @@ def AverageFightTime(Fighter):
  #Val = (RateOther2[3])
  #return float(Val[1:3])
 
+# Significant strikes by position
 def SigStrikeByPosition(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -347,6 +357,8 @@ def SigStrikeByPosition(Fighter):
   return reverse(Standing),reverse(Clinch),reverse(Ground)
  else:
   return nan,nan,nan 
+
+# Significant strikes by target
 def SigStrikeByTarget(Fighter):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -369,6 +381,8 @@ def SigStrikeByTarget(Fighter):
   return round(Head,0),round(Body,0),round(Leg,0)
  else:
   return nan,nan,nan
+
+# Another win type funciton
 def WinType(Fighter,sher):
  time.sleep(2)
  source = requests.get("https://www.ufc.com/athlete/"+Fighter).text
@@ -386,6 +400,7 @@ def WinType(Fighter,sher):
   KO,DEC,SUB = WinType2(sher) 
   return (KO),(DEC),(SUB) ## Fix these
 
+
 def cleanRounds(raw_data):
  newRounds = []
  for i in range(len(raw_data)):
@@ -396,6 +411,7 @@ def cleanRounds(raw_data):
  return asarray(newRounds)
 
 
+# Average win and loss rounds
 def AveWLRound(raw_data):
  RoundsWin = []
  RoundsLoss = []
@@ -410,6 +426,7 @@ def AveWLRound(raw_data):
  RoundsLoss = cleanRounds(asarray(RoundsLoss))
  return round(mean(RoundsWin),2),round(mean(RoundsLoss),2)
 
+# Win loss data
 def WinLoss(raw_data):
  RoundsWin = []
  RoundsLoss = []
@@ -426,7 +443,7 @@ def WinLoss(raw_data):
 
 
 
-
+# Fighter camp information
 def Camp(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -436,6 +453,7 @@ def Camp(Fighter):
    Camp.append((i.text))
  return Camp
 
+# Fighter Weight Class
 def WeightClass(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -445,6 +463,7 @@ def WeightClass(Fighter):
    Class.append((i.text))
  return Class
 
+# Fighter Weight
 def WeightS(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -454,6 +473,7 @@ def WeightS(Fighter):
    Weight.append((i.text))
  return Weight
 
+# Fighter Height
 def HeightS(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -463,6 +483,7 @@ def HeightS(Fighter):
    Height.append((i.text))
  return Height
 
+# Fighter Age
 def AgeS(Fighter):
  time.sleep(2)
  source = requests.get("https://www.sherdog.com/fighter/"+Fighter).text
@@ -474,7 +495,7 @@ def AgeS(Fighter):
 
 
 
-
+# Function That gets stats and also organizes
 def GetStats(ufcTag,sherTag):
  ## Physical Atr
  Dynamics = OnePedegree(sherTag)
@@ -548,6 +569,7 @@ def NestList(lists):
   newList.append(lists[i:(i+2)]) 
  return newList
 
+# Function that writes files and generates .pkl files for easy storage
 def Output(ufc_tag,sher_tag):
  ufc_tag1 =(str(ufc_tag[0]))
  ufc_tag1 = (reverse(reverse(ufc_tag1)[1:]))
@@ -606,6 +628,8 @@ def Output(ufc_tag,sher_tag):
  print(esotericComp.to_string(index=False, header=True))
  '''
  return 0
+
+# Main Function
 def main():
  ufc_tag = open("Input/NFightersUFC.txt","r").readlines()
  UFC_TAG = NestList(ufc_tag)
